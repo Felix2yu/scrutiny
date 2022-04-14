@@ -43,7 +43,7 @@
         "apexcharts": "3.19.0",
         "crypto-js": "3.3.0",
         "highlight.js": "10.0.1",
-        "humanize-duration": "^3.24.0",
+        "humanize-duration": "^3.27.1",
         "lodash": "4.17.15",
         "moment": "2.29.2",
         "ng-apexcharts": "1.2.3",
