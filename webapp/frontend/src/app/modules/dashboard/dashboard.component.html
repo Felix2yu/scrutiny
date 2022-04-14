@@ -5,22 +5,22 @@
 
             <div class="flex items-center justify-between w-full my-4 px-4 xs:pr-0">
                 <div class="mr-6">
-                    <h2 class="m-0">Dashboard</h2>
-                    <div class="text-secondary tracking-tight">Drive health at a glance</div>
+                    <h2 class="m-0">仪表盘</h2>
+                    <div class="text-secondary tracking-tight">磁盘健康一目了然</div>
                 </div>
                 <!-- Action buttons -->
                 <div class="flex items-center">
                     <button matTooltip="not yet implemented" class="xs:hidden" mat-stroked-button>
                         <mat-icon class="icon-size-20"
                                   [svgIcon]="'save'"></mat-icon>
-                        <span class="ml-2">Export</span>
+                        <span class="ml-2">导出</span>
                     </button>
                     <button class="ml-2 xs:hidden"
                             (click)="openDialog()"
                             mat-stroked-button>
                         <mat-icon class="icon-size-20 rotate-90 mirror"
                                   [svgIcon]="'tune'"></mat-icon>
-                        <span class="ml-2">Settings</span>
+                        <span class="ml-2">设置</span>
                     </button>
 
                     <!-- Actions menu (visible on xs) -->
@@ -34,12 +34,12 @@
                                     matTooltip="not yet implemented">
                                 <mat-icon class="icon-size-20"
                                           [svgIcon]="'save'"></mat-icon>
-                                <span class="ml-2">Export</span>
+                                <span class="ml-2">导出</span>
                             </button>
                             <button mat-menu-item (click)="openDialog()">
                                 <mat-icon class="icon-size-20 rotate-90 mirror"
                                           [svgIcon]="'tune'"></mat-icon>
-                                <span class="ml-2">Settings</span>
+                                <span class="ml-2">设置</span>
                             </button>
                         </mat-menu>
                     </div>
@@ -69,7 +69,7 @@
                                    class="font-bold text-md text-secondary uppercase tracking-wider">{{deviceTitle(disk)}}</a>
                                 <div [ngClass]="{'text-green': disk.smart_results[0]?.smart_status == 'passed',
                                     'text-red': disk.smart_results[0]?.smart_status == 'failed' }" class="font-medium text-sm" *ngIf="disk.smart_results[0]">
-                                    Last Updated on {{disk.smart_results[0]?.date | date:'MMMM dd, yyyy - HH:mm' }}
+                                    最后更新：{{disk.smart_results[0]?.date | date:'yyyy-MM-dd - HH:mm' }}
                                 </div>
                             </div>
                             <div class="ml-auto" *ngIf="disk.smart_results">
@@ -82,7 +82,7 @@
                                     <span class="flex items-center">
                                         <mat-icon class="icon-size-20 mr-3"
                                                   [svgIcon]="'payment'"></mat-icon>
-                                        <span>View Details</span>
+                                        <span>查看详情</span>
                                     </span>
                                     </a>
                                 </mat-menu>
@@ -92,19 +92,19 @@
                             <div class="flex flex-col mx-6 my-3 xs:w-full">
                                 <div class="font-semibold text-xs text-hint uppercase tracking-wider leading-none">S.M.A.R.T</div>
                                 <div class="mt-2 font-medium text-3xl leading-none" *ngIf="disk.smart_results[0]; else unknownStatus">{{ disk.smart_results[0]?.smart_status | titlecase}}</div>
-                                <ng-template #unknownStatus><div class="mt-2 font-medium text-3xl leading-none">No Data</div></ng-template>
+                                <ng-template #unknownStatus><div class="mt-2 font-medium text-3xl leading-none">无数据</div></ng-template>
                             </div>
                             <div class="flex flex-col mx-6 my-3 xs:w-full">
-                                <div class="font-semibold text-xs text-hint uppercase tracking-wider leading-none">Temperature</div>
+                                <div class="font-semibold text-xs text-hint uppercase tracking-wider leading-none">温度</div>
                                 <div class="mt-2 font-medium text-3xl leading-none" *ngIf="disk.smart_results[0]; else unknownTemp">{{ disk.smart_results[0]?.temp }}°C</div>
                                 <ng-template #unknownTemp><div class="mt-2 font-medium text-3xl leading-none">--</div></ng-template>
                             </div>
                             <div class="flex flex-col mx-6 my-3 xs:w-full">
-                                <div class="font-semibold text-xs text-hint uppercase tracking-wider leading-none">Capacity</div>
+                                <div class="font-semibold text-xs text-hint uppercase tracking-wider leading-none">容量</div>
                                 <div class="mt-2 font-medium text-3xl leading-none">{{ disk.capacity | fileSize}}</div>
                             </div>
                             <div class="flex flex-col mx-6 my-3 xs:w-full">
-                                <div class="font-semibold text-xs text-hint uppercase tracking-wider leading-none">Powered On</div>
+                                <div class="font-semibold text-xs text-hint uppercase tracking-wider leading-none">通电时间</div>
                                 <div class="mt-2 font-medium text-3xl leading-none" *ngIf="disk.smart_results[0]?.power_on_hours; else unknownPoweredOn">{{ humanizeDuration(disk.smart_results[0]?.power_on_hours * 60 * 60 * 1000, { round: true, largest: 1, units: ['y', 'd', 'h'] }) }}</div>
                                 <ng-template #unknownPoweredOn><div class="mt-2 font-medium text-3xl leading-none">--</div></ng-template>
                             </div>
@@ -119,21 +119,21 @@
                     <div class="flex flex-col p-6 pr-4 pb-4">
                         <div class="flex items-center justify-between">
                             <div class="flex flex-col">
-                                <div class="font-bold text-md text-secondary uppercase tracking-wider mr-4">Temperature</div>
-                                <div class="text-sm text-hint font-medium">Temperature history for each device </div>
+                                <div class="font-bold text-md text-secondary uppercase tracking-wider mr-4">温度</div>
+                                <div class="text-sm text-hint font-medium">各设备的温度历史记录 </div>
                             </div>
                             <div>
                                 <button class="h-8 min-h-8 px-2"
                                         matTooltip="not yet implemented"
                                         mat-button
                                         [matMenuTriggerFor]="accountBalanceMenu">
-                                    <span class="font-medium text-sm text-hint">12 months</span>
+                                    <span class="font-medium text-sm text-hint">12月</span>
                                 </button>
                                 <mat-menu #accountBalanceMenu="matMenu">
-                                    <button mat-menu-item>3 months</button>
-                                    <button mat-menu-item>6 months</button>
-                                    <button mat-menu-item>9 months</button>
-                                    <button mat-menu-item>12 months</button>
+                                    <button mat-menu-item>3月</button>
+                                    <button mat-menu-item>6月</button>
+                                    <button mat-menu-item>9月</button>
+                                    <button mat-menu-item>12月</button>
                                 </mat-menu>
                             </div>
                         </div>
@@ -162,10 +162,10 @@
         <img class="image"
              src="assets/images/dashboard-placeholder.png">
 
-        <h1>No Devices Detected!</h1>
-        <p style="max-width:700px;">Scrutiny includes a Collector agent that you must run on all of your systems. The Collector is responsible for detecting connected storage devices and collecting S.M.A.R.T data on a configurable schedule.</p>
+        <h1>没有检测到设备</h1>
+        <p style="max-width:700px;">Scrutiny 检查包括一个收集器代理，你必须运行在你的所有系统。采集器负责检测连接的存储设备，并按照可配置的时间表收集 S.M.A.R.T 数据。</p>
 
-        <p><br/>You can trigger the Collector manually by running the following command, then refreshing this page:</p>
+        <p><br/>你可以通过运行以下命令手动触发收集器，然后刷新这个页面：</p>
         <code>scrutiny-collector-metrics run</code>
 
     </div>
