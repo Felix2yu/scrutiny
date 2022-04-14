@@ -16,6 +16,8 @@ jobs:
           apt-get update && apt-get install -y software-properties-common
           add-apt-repository ppa:git-core/ppa && apt-get update && apt-get install -y git
           git --version
+      - name: work around permission issue
+        run: git config --global --add safe.directory /__w/scrutiny/scrutiny
       - name: Checkout
         uses: actions/checkout@v2
       - name: Test
