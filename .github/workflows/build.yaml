@@ -6,9 +6,9 @@ jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
-    container: techknowlogick/xgo:go-1.13.x
+    container: techknowlogick/xgo:latest
     env:
-      PROJECT_PATH: /go/src/github.com/analogj/scrutiny
+      PROJECT_PATH: /go/src/scrutiny
       CGO_ENABLED: 1
     steps:
       - name: Git
@@ -43,14 +43,14 @@ jobs:
             /build/scrutiny-collector-metrics-linux-amd64
             /build/scrutiny-web-linux-arm64
             /build/scrutiny-collector-metrics-linux-arm64
-            /build/scrutiny-web-linux-arm-5
-            /build/scrutiny-collector-metrics-linux-arm-5
-            /build/scrutiny-web-linux-arm-6
-            /build/scrutiny-collector-metrics-linux-arm-6
-            /build/scrutiny-web-linux-arm-7
-            /build/scrutiny-collector-metrics-linux-arm-7
-            /build/scrutiny-web-windows-4.0-amd64.exe
-            /build/scrutiny-collector-metrics-windows-4.0-amd64.exe
+#            /build/scrutiny-web-linux-arm-5
+#            /build/scrutiny-collector-metrics-linux-arm-5
+#            /build/scrutiny-web-linux-arm-6
+#            /build/scrutiny-collector-metrics-linux-arm-6
+#            /build/scrutiny-web-linux-arm-7
+#            /build/scrutiny-collector-metrics-linux-arm-7
+#            /build/scrutiny-web-windows-4.0-amd64.exe
+#            /build/scrutiny-collector-metrics-windows-4.0-amd64.exe
 #            /build/scrutiny-web-freebsd-amd64
 #            /build/scrutiny-collector-metrics-freebsd-amd64
       - uses: codecov/codecov-action@v1
