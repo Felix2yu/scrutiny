@@ -93,10 +93,10 @@ export class TreoDateRangeComponent implements ControlValueAccessor, OnInit, OnD
             month1: null,
             month2: null
         };
-        this.dateFormat = 'DD/MM/YYYY';
+        this.dateFormat = 'YYYY-MM-DD';
         this.rangeChanged = new EventEmitter();
         this.setWhichDate = 'start';
-        this.timeFormat = '12';
+        this.timeFormat = '24';
 
         // Initialize the component
         this._init();
