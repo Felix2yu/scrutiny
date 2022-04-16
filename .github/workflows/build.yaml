@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     container: techknowlogick/xgo:latest
     env:
-      PROJECT_PATH: /go/src/github.com/analogj/scrutiny
+      PROJECT_PATH: /go/src/github.com/Felix2yu/scrutiny
       CGO_ENABLED: 1
     steps:
       - name: Git
