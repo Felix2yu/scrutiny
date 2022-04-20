@@ -11,12 +11,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-        with:
-          ref: ${{github.event.release.tag_name}}
       - name: Build Frontend
         run: |
           cd webapp/frontend
           npm install -g @angular/cli@9.1.4
           npm install
-          ng test --prod
-          ng build --output-path=dist --base-href="/web/" --prod
+          ng test
+          ng build --output-path=dist --base-href="/web/"
