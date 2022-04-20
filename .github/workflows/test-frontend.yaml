@@ -1,0 +1,22 @@
+# compiles angular frontend and attaches it to the latest release.
+name: Test Frontend
+
+on: [push, pull_request]
+
+jobs:
+  test-frontend:
+    name: Test Frontend
+    runs-on: ubuntu-latest
+    container: node:lts-slim
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          ref: ${{github.event.release.tag_name}}
+      - name: Build Frontend
+        run: |
+          cd webapp/frontend
+          npm install -g @angular/cli@9.1.4
+          npm install
+          ng test --configuration production
+          ng build --output-path=dist --base-href="/web/" --configuration production
