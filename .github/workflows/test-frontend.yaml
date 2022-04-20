@@ -16,5 +16,4 @@ jobs:
           cd webapp/frontend
           npm install -g @angular/cli@9.1.4
           npm install
-          ng test
-          ng build --output-path=dist --base-href="/web/"
+          ng build --output-path=dist --base-href="/web/" --configuration production
