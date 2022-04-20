@@ -42,7 +42,7 @@
         "@types/humanize-duration": "^3.18.1",
         "apexcharts": "3.35.0",
         "crypto-js": "4.1.1",
-        "highlight.js": "10.0.1",
+        "highlight.js": "11.5.1",
         "humanize-duration": "^3.27.1",
         "lodash": "4.17.15",
         "moment": "2.29.2",
