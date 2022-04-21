@@ -37,7 +37,7 @@
         "@fullcalendar/interaction": "5.11.0",
         "@fullcalendar/list": "5.11.0",
         "@fullcalendar/moment": "5.11.0",
-        "@fullcalendar/rrule": "4.4.0",
+        "@fullcalendar/rrule": "5.11.0",
         "@fullcalendar/timegrid": "5.11.0",
         "@types/humanize-duration": "^3.18.1",
         "apexcharts": "3.35.0",
