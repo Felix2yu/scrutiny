@@ -39,7 +39,7 @@
         "@fullcalendar/moment": "5.11.0",
         "@fullcalendar/rrule": "5.11.0",
         "@fullcalendar/timegrid": "5.11.0",
-        "@types/humanize-duration": "^3.18.1",
+        "@types/humanize-duration": "^3.27.1",
         "apexcharts": "3.35.0",
         "crypto-js": "4.1.1",
         "highlight.js": "11.5.1",
