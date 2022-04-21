@@ -44,7 +44,7 @@
         "crypto-js": "4.1.1",
         "highlight.js": "11.5.1",
         "humanize-duration": "^3.27.1",
-        "lodash": "4.17.15",
+        "lodash": "4.17.21",
         "moment": "2.29.3",
         "ng-apexcharts": "1.2.3",
         "ngx-markdown": "9.1.1",
