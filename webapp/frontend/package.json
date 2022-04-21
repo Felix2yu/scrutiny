@@ -65,7 +65,7 @@
         "@types/crypto-js": "4.1.1",
         "@types/highlight.js": "10.1.0",
         "@types/jasmine": "4.0.3",
-        "@types/jasminewd2": "2.0.8",
+        "@types/jasminewd2": "2.0.10",
         "@types/lodash": "4.14.150",
         "@types/node": "12.12.37",
         "codelyzer": "6.0.2",
