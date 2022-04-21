@@ -46,7 +46,7 @@
         "humanize-duration": "^3.27.1",
         "lodash": "4.17.21",
         "moment": "2.29.3",
-        "ng-apexcharts": "1.2.3",
+        "ng-apexcharts": "1.7.1",
         "ngx-markdown": "9.1.1",
         "ngx-quill": "11.1.0",
         "perfect-scrollbar": "1.5.5",
