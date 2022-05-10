@@ -5,7 +5,13 @@
 
 version: 2
 updates:
-  - package-ecosystem: 'npm'
-    directory: '/webapp/frontend/'
+  - package-ecosystem: "npm"
+    directory: "/webapp/frontend/"
     schedule:
-      interval: 'daily'
+      interval: "daily"
+    open-pull-requests-limit: 10
+    ignore:
+      - dependency-name: "angular*"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "@angular*"
+        update-types: ["version-update:semver-major"]
